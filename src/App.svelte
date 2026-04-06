@@ -70,6 +70,13 @@
     persistState()
   }
 
+  function reset() {
+    count = 0
+    lastIncrementAt = null
+    cooldownRemainingMs = 0
+    persistState()
+  }
+
   onMount(() => {
     loadState()
     updateCooldown()
@@ -138,13 +145,22 @@
         </div>
       </button>
 
-      <button
-        class="inline-flex h-12 min-w-36 items-center justify-center rounded-full border border-stone-900/10 bg-stone-950 px-6 text-xs font-semibold uppercase tracking-[0.26em] text-stone-50 shadow-[0_18px_42px_rgba(28,25,23,0.2)] transition hover:bg-stone-900 active:scale-[0.97]"
-        on:click={decrement}
-        aria-label="Decrease counter"
-      >
-        decrease
-      </button>
+      <div class="flex w-full max-w-[20rem] flex-row gap-3">
+        <button
+          class="inline-flex h-12 flex-1 items-center justify-center rounded-full border border-stone-900/10 bg-stone-950 px-6 text-xs font-semibold uppercase tracking-[0.26em] text-stone-50 shadow-[0_18px_42px_rgba(28,25,23,0.2)] transition hover:bg-stone-900 active:scale-[0.97]"
+          on:click={decrement}
+          aria-label="Decrease counter"
+        >
+          decrease
+        </button>
+        <button
+          class="inline-flex h-12 flex-1 items-center justify-center rounded-full border border-red-900/10 bg-red-800 px-6 text-xs font-semibold uppercase tracking-[0.26em] text-stone-50 shadow-[0_18px_42px_rgba(153,27,27,0.2)] transition hover:bg-red-700 active:scale-[0.97]"
+          on:click={reset}
+          aria-label="Reset counter to zero"
+        >
+          reset
+        </button>
+      </div>
     </div>
 
     <footer class="mx-auto mt-auto pt-4 text-[0.6rem] uppercase tracking-[0.3em] text-stone-500/50">
