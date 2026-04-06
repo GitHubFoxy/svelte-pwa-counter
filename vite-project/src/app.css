@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+:root {
+  color: #1c1917;
+  background: #efe6d1;
+  font-family: 'Avenir Next', 'SF Pro Text', 'Segoe UI', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+html {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+@theme {
+  --color-sand-50: #f8f3e8;
+  --color-sand-100: #efe6d1;
+  --color-sand-200: #e1d1b0;
+  --color-ink-900: #1c1917;
+}
